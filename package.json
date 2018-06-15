@@ -1,0 +1,14 @@
+{
+  "name": "flask-express-react",
+  "version": "1.0.0",
+  "description": "A template for web-applications using Flask, Express and React.",
+  "author": "Niklas Rosenstein <rosensteinniklas@gmail.com>",
+  "repository": "https://github.com/NiklasRosenstein/Flask-Express-React",
+  "scripts": {
+    "api": "python -m pyinvoke application.api.main:main",
+    "api:dev": "cross-env FLASK_DEBUG=1 PYTHONPATH=. python -m pyinvoke application.api.main:main"
+  },
+  "devDependencies": {
+    "cross-env": "^5.2.0"
+  }
+}

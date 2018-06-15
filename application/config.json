@@ -1,0 +1,9 @@
+{
+  "api": {
+    "serverName": "http://localhost:8079"
+  },
+  "web": {
+    "serverName": "http://localhost:8080",
+    "internalApiServerName": null
+  }
+}
