@@ -8,6 +8,7 @@ frontend, a separate [Express] web server and [Webpack] bundling.
 [React]: https://reactjs.org/
 [Webpack]: https://webpack.js.org/
 [WTFPL]: http://www.wtfpl.net/
+[Gunicorn]: http://gunicorn.org/
 
 <p align="center"><img src="https://i.imgur.com/r2QW31k.png"></p>
 
@@ -31,6 +32,16 @@ API servers. Then visit http://localhost:8080
     npm start api:dev
 
 You may want to remove `package-lock.json` from `.gitignore`.
+
+#### Production Deployment
+
+You must build the webpack bundle and transpile the server-side code for
+production use. We also highly recommend using a production-grade WSGI
+like [Gunicorn] for the Flask component.
+
+    npm run build
+    npm start web
+    gunicorn -w 4 application.api.main:app
 
 ---
 
