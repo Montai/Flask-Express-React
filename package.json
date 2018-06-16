@@ -7,6 +7,7 @@
   "scripts": {
     "api": "python -m pyinvoke application.api.main:main",
     "api:dev": "cross-env FLASK_DEBUG=1 PYTHONPATH=. python -m pyinvoke application.api.main:main",
+    "build": "cross-env NODE_ENV=production babel application/web -d application/dist && cross-env NODE_ENV=production webpack",
     "web": "cross-env NODE_ENV=production babel-node application/web/server.js",
     "web:dev": "babel-node application/web/server.js"
   },

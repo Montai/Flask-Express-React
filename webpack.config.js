@@ -6,7 +6,8 @@ module.exports = {
   entry: './application/web/index.js',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'application/static')
+    path: path.resolve(__dirname, 'application/static/js'),
+    publicPath: '/js/'
   },
   module: {
     rules: [
