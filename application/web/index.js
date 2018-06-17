@@ -63,13 +63,17 @@ export class IndexComponent extends React.Component {
     alert(result.body.message)
   }
 
+  componentDidMount() {
+    this.name.current.focus()
+  }
+
   render() {
     return <IndexStyle>
       <div>
         <p className="title">Hello API Test</p>
         <form>
           <label htmlFor="name">Name</label>
-          <input ref={this.name} type="text" name="name" autoFocus/> <br/>
+          <input ref={this.name} type="text" name="name"/> <br/>
           <button onClick={this.send.bind(this)}>Send</button>
         </form>
       </div>
