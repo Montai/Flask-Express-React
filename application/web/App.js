@@ -1,10 +1,7 @@
 
-import config from '../config.json'
 import React from 'react'
 import styled from 'styled-components'
-import superagent from 'superagent'
-
-const API = config.web.internalApiServerName || config.api.serverName
+import api from './api'
 
 const AppStyle = styled.div`
   display: flex;
@@ -58,7 +55,7 @@ export class App extends React.Component {
   async send(ev) {
     ev.preventDefault()
     let name = this.name.current.value;
-    let result = await superagent.get(API + '/api/hello', {'name': name})
+    let result = await api.get('/api/hello', {'name': name})
     alert(result.body.message)
   }
 
